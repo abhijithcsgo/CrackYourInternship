@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    const count = {};
+    let len = nums.length;
+    const majorityCount = Math.floor(len/2);
+
+    for(var i = 0; i <len ; i++){
+        var num = nums[i];
+        if(count[num] !== undefined){
+            count[num]++;
+        }
+        else{
+            count[num] = 1;
+        }
+        if(count[num] > majorityCount){
+            return num;
+        }
+    }
+};
